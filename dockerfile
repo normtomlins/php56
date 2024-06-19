@@ -9,8 +9,8 @@ RUN apt-get install --yes --force-yes cron g++ gettext libicu-dev openssl libc-c
 
 RUN a2enmod rewrite
 
-RUN docker-php-ext-install mysql mysqli mysdql_pdo mbstring php-xml 
-RUN docker-php-ext-enable mysql mysqli mysql_pdo mbstring php-xml
+RUN docker-php-ext-install mysql mysqli pdo_mysql mbstring xml xmlreader xmlrpc xmlwriter
+RUN docker-php-ext-enable mysql mysqli pdo_mysql mbstring xml xmlreader xmlrpc xmlwriter
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr --with-jpeg-dir=/usr --with-png-dir=/usr
 RUN docker-php-ext-install gd
